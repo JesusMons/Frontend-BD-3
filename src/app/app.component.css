@@ -16,19 +16,16 @@ main {
 /* Styling for the header section */
 header {
     grid-area: header;
-    border: 1px solid royalblue;
 }
 
 /* Styling for the sidebar section */
 aside {
     grid-area: aside;
-    border: 1px solid royalblue;
 }
 
 /* Styling for the main content section */
 section {
     grid-area: section;
-    border: 1px solid royalblue;
 }
 
 /* Flexbox layout for elements within a specific container */
@@ -47,5 +44,4 @@ section {
 /* Styling for the footer section */
 footer {
     grid-area: footer;
-    border: 1px solid royalblue;
 }

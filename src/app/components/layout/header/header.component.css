@@ -1,0 +1,64 @@
+/* General header styles */
+header {
+    grid-area: header; /* Defines the grid area for the header */
+    background-color: #01616c; /* Header background color */
+    color: white; /* Text color */
+    display: flex; /* Flexbox layout to arrange elements */
+    align-items: center; /* Vertically align items */
+    justify-content: space-between; /* Space elements horizontally */
+    text-align: center; /* Centers text alignment */
+    font-size: 1.2rem; /* Text size */
+    font-weight: bold; /* Bold font */
+    letter-spacing: 1px; /* Space between letters */
+    height: 100%; /* Header height */
+    padding: 0 1rem; /* Internal padding */
+}
+
+/* Logo container */
+.header-logo {
+    margin-right: 15px; /* Spacing between logo and title */
+}
+
+.header-logo img {
+    height: 60px; /* Logo height */
+    width: auto; /* Maintains aspect ratio */
+    border-radius: 5px; /* Optional: Rounded corners */
+}
+
+/* Title styling */
+header h1 {
+    margin: 0; /* Removes default margin */
+    font-size: 1.5rem; /* Title font size */
+    flex-grow: 1; /* Allows the title to take up remaining space */
+    text-transform: uppercase; /* Converts text to uppercase */
+    text-align: center; /* Aligns title text to the center */
+}
+
+/* Buttons container */
+.header-buttons {
+    display: flex; /* Align buttons in a row */
+    gap: 1rem; /* Space between buttons */
+}
+
+/* Button styling */
+.header-buttons .btn {
+    background: none; /* No background */
+    border: none; /* No border */
+    color: white; /* Text color */
+    font-size: 1rem; /* Text size */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-decoration: none; /* No underline */
+    font-weight: bold; /* Bold font */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+/* Hover effect on buttons */
+.header-buttons .btn:hover {
+    color: #ffc107; /* Changes text color on hover */
+}
+
+.btn .material-icons {
+    vertical-align: middle; /* Vertically centers the icon */
+    margin-right: 5px; /* Space between the icon and text */
+}
+

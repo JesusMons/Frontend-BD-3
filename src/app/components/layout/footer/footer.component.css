@@ -1,0 +1,43 @@
+/* General footer styles */
+footer {
+    grid-area: footer; /* Placement within the grid layout */
+    background-color: #014a4f; /* Darker background than the header */
+    color: white; /* White text color */
+    display: flex; /* Flexbox layout */
+    justify-content: space-between; /* Distribute content evenly */
+    align-items: center; /* Vertically center content */
+    padding: 10px 20px; /* Internal spacing */
+    border-top: 2px solid #01616c; /* Top border to match the header's color */
+}
+
+/* Footer content styling */
+.footer-content {
+    display: flex; /* Flexbox for layout */
+    flex-direction: column; /* Align elements vertically */
+    text-align: center; /* Center text alignment */
+    width: 100%; /* Occupies full width */
+}
+
+.footer-content p {
+    margin: 0; /* Remove default margin */
+    font-size: 1rem; /* Standard text size */
+}
+
+/* Footer links */
+.footer-links {
+    margin-top: 5px; /* Spacing above the links */
+    display: flex; /* Align links horizontally */
+    gap: 15px; /* Spacing between links */
+    justify-content: center; /* Center the links horizontally */
+}
+
+.footer-links a {
+    color: #ffc107; /* Yellow links to make them stand out */
+    text-decoration: none; /* Remove underline */
+    font-size: 0.9rem; /* Slightly smaller text size for links */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.footer-links a:hover {
+    color: #ffffff; /* Change link color to white on hover */
+}
