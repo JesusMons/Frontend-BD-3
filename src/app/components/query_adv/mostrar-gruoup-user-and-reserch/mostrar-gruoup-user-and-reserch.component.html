@@ -1,0 +1,32 @@
+<!-- PrimeNG Card component to display publications grouped by user and research group -->
+<p-card class="w-12 h-full"> <!-- Full-width and full-height styled card container -->
+  
+    <!-- Card Header -->
+    <ng-template pTemplate="header">
+      <h2>Agrupar Publicaciones por Usuario y Grupo de Investigación</h2> <!-- Card Title -->
+    </ng-template>
+  
+    <!-- PrimeNG Table for displaying grouped publications -->
+    <p-table [value]="groupedPublications"> <!-- Binds the data source to groupedPublications -->
+  
+      <!-- Table Header -->
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Usuario</th> <!-- Column for User Name -->
+          <th>Grupo de Investigación</th> <!-- Column for Research Group Name -->
+          <th>Total de Publicaciones</th> <!-- Column for Total Publications -->
+        </tr>
+      </ng-template>
+  
+      <!-- Table Body -->
+      <ng-template pTemplate="body" let-publication> <!-- Iterates over the groupedPublications array -->
+        <tr>
+          <td>{{ publication.user__first_name }} {{ publication.user__last_name }}</td> <!-- User's Full Name -->
+          <td>{{ publication.research_group__name }}</td> <!-- Research Group Name -->
+          <td>{{ publication.total }}</td> <!-- Total Publications -->
+        </tr>
+      </ng-template>
+  
+    </p-table>
+  </p-card>
+  

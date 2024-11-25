@@ -1,0 +1,31 @@
+<!-- PrimeNG Card component for containing the publication filter table -->
+<p-card class="w-12 h-full"> <!-- Full-width card with custom styling -->
+  <!-- Header template of the card -->
+  <ng-template pTemplate="header">
+    <h2>Filtrar Publicaciones por Palabra y Fecha</h2> <!-- Card title -->
+    <p>Como ejemplo usaremos la palabra "IA" y la fecha a partir de la fecha 2023-02-01</p>
+  </ng-template>
+
+  <!-- PrimeNG Table component to display filtered publications -->
+  <p-table [value]="publications"> <!-- Binds the table's value to the publications array -->
+    <!-- Header template of the table -->
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Titulo</th> <!-- Column for publication title -->
+        <th>Autor</th> <!-- Column for publication author -->
+        <th>Fecha de Publicación</th> <!-- Column for publication date -->
+        <th>Grupo de Investigación</th> <!-- New column for research group name -->
+      </tr>
+    </ng-template>
+
+    <!-- Body template of the table -->
+    <ng-template pTemplate="body" let-publication> <!-- Loop through the publications array -->
+      <tr>
+        <td>{{ publication.title }}</td> <!-- Display the publication title -->
+        <td>{{ publication.user_name }}</td> <!-- Display the author's name -->
+        <td>{{ publication.publication_date }}</td> <!-- Display the publication date -->
+        <td>{{ publication.research_group_name }}</td> <!-- Display the research group name -->
+      </tr>
+    </ng-template>
+  </p-table>
+</p-card>

@@ -1,0 +1,31 @@
+<!-- PrimeNG Card component for filtering research groups by keywords -->
+<p-card class="w-12 h-full"> <!-- Full-width and full-height styled card container -->
+  
+    <!-- Header Section -->
+    <ng-template pTemplate="header">
+      <h2>Filtrar Grupos de Investigación por Palabras Claves</h2> <!-- Card Title -->
+      <p>Como ejemplo usamos "Tecnologia" o "Innovacion" en el nombre, y para la descripción usamos "implementacion" o "nuevas tecnologias"</p> <!-- Description of filter criteria -->
+    </ng-template>
+  
+    <!-- PrimeNG Table for displaying filtered research groups -->
+    <p-table [value]="researchGroups"> <!-- Binds the data source to researchGroups -->
+  
+      <!-- Table Header -->
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Group Name</th> <!-- Column for Research Group Name -->
+          <th>Description</th> <!-- Column for Research Group Description -->
+        </tr>
+      </ng-template>
+  
+      <!-- Table Body -->
+      <ng-template pTemplate="body" let-group> <!-- Iterates over the researchGroups array -->
+        <tr>
+          <td>{{ group.name }}</td> <!-- Displays the research group's name -->
+          <td>{{ group.description }}</td> <!-- Displays the research group's description -->
+        </tr>
+      </ng-template>
+  
+    </p-table>
+  </p-card>
+  

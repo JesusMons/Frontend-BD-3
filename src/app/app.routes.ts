@@ -23,6 +23,14 @@ import { MostrarUserComponent } from './components/user/mostrar-user/mostrar-use
 import { ActualizarUserComponent } from './components/user/actualizar-user/actualizar-user.component';
 import { CrearUserComponent } from './components/user/crear-user/crear-user.component';
 import { EliminarUserComponent } from './components/user/eliminar-user/eliminar-user.component';
+import { PublicationFilterByWordDateComponent } from './components/query_adv/mostrar-publication-word-date/mostrar-publication-word-date.component';
+import { FilteredPublicationsByDateAndFacultyComponent } from './components/query_adv/mostrar-publication-year-faculty/mostrar-publication-year-faculty.component';
+import { GroupPublicationsByResearchGroupComponent } from './components/query_adv/mostrar-count-publications-research/mostrar-count-publications-research.component';
+import { GroupPublicationsByUserAndResearchGroupComponent } from './components/query_adv/mostrar-gruoup-user-and-reserch/mostrar-gruoup-user-and-reserch.component';
+import { FilterResearchGroupsByTechnologyComponent } from './components/query_adv/mostrar-publication-name-description/mostrar-publication-name-description.component';
+import { UsersByProgramComponent } from './components/query_adv/mostrar-user-by-programs/mostrar-user-by-programs.component';
+import { GroupUsersByResearchGroupComponent } from './components/query_adv/mostrar-group-user-research/mostrar-group-user-research.component';
+
 
 // Define application routes and associate each route with a component
 export const routes: Routes = [
@@ -110,5 +118,33 @@ export const routes: Routes = [
     {
         path: "user/eliminar/:id",
         component: EliminarUserComponent // Route to delete a user
-    }
+    },
+    {
+        path: "publications/filter/date-word",
+        component: PublicationFilterByWordDateComponent // Route to filter post by word and date
+    },
+    {
+        path: "publications/filter/year-faculty",
+        component: FilteredPublicationsByDateAndFacultyComponent // Route to filter post by year and faculty
+    },
+    {
+        path: "publications/count/research-group",
+        component: GroupPublicationsByResearchGroupComponent // Route to group publications by research group
+    },
+    {
+        path: "publications/group/user-research",
+        component: GroupPublicationsByUserAndResearchGroupComponent // Route to group publications by user and research group
+    },
+    {
+        path: "research-groups/filter/key-word",
+        component: FilterResearchGroupsByTechnologyComponent // Route for filtering research groups related to word in the name and description
+    },
+    {
+        path: "users/filter/user-program/:id",
+        component: UsersByProgramComponent // Route to show the students of a specific program
+    },
+    {
+        path: "research-groups/group/user-research",
+        component: GroupUsersByResearchGroupComponent // Route to group engineering students according to their research hotbed
+    },
 ];

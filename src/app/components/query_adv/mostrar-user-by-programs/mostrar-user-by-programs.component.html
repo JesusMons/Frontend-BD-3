@@ -1,0 +1,34 @@
+<!-- PrimeNG Card component for displaying users in a program -->
+<p-card class="w-12 h-full"> <!-- Full-width and full-height styled card container -->
+  
+    <!-- Header Section -->
+    <ng-template pTemplate="header">
+      <h2>Mostrar Usuarios en un Programa Especifico</h2> <!-- Card Title -->
+    </ng-template>
+  
+    <!-- PrimeNG Table for displaying user data -->
+    <p-table [value]="users"> <!-- Bind the table's data source to the users array -->
+  
+      <!-- Table Header -->
+      <ng-template pTemplate="header">
+        <tr>
+          <th>First Name</th> <!-- Column for user's first name -->
+          <th>Last Name</th> <!-- Column for user's last name -->
+          <th>Email</th> <!-- Column for user's email -->
+          <th>Program</th> <!-- Column for the name of the program -->
+        </tr>
+      </ng-template>
+  
+      <!-- Table Body -->
+      <ng-template pTemplate="body" let-user> <!-- Iterates over the users array -->
+        <tr>
+          <td>{{ user.first_name }}</td> <!-- Display user's first name -->
+          <td>{{ user.last_name }}</td> <!-- Display user's last name -->
+          <td>{{ user.email }}</td> <!-- Display user's email -->
+          <td>{{ user.program_name }}</td> <!-- Display the name of the user's program -->
+        </tr>
+      </ng-template>
+  
+    </p-table>
+  </p-card>
+  

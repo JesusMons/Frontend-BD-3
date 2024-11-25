@@ -67,8 +67,13 @@ export class AsideComponent {
         label: 'Consultas Avanzadas',
         icon: 'pi pi-database',
         items: [
-          { label: 'Listar', icon: 'pi pi-list', routerLink: '' },
-          { label: 'Crear', icon: 'pi pi-plus', routerLink: '' },
+          { label: 'Publicación Por Fecha y Palabra', icon: 'pi pi-search', routerLink: '/publications/filter/date-word' },
+          { label: 'Publicacion Por Año y Facultad', icon: 'pi pi-search', routerLink: '/publications/filter/year-faculty' },
+          { label: 'Agrupar Publicaciones por Grupo de Investigación', icon: 'pi pi-search', routerLink: '/publications/count/research-group' },
+          { label: 'Agrupar Publicaciones por Usuarios y Grupo de Investigación', icon: 'pi pi-search', routerLink: '/publications/group/user-research' },
+          { label: 'Filtrar Grupos de Investigaciones por Palabra', icon: 'pi pi-search', routerLink: '/research-groups/filter/key-word' },
+          { label: 'Mostrar los Usuarios de un Programa en Especifico', icon: 'pi pi-search', routerLink: '/users/filter/user-program/:id' }, 
+          { label: 'Agrupar lo Estudiantes por Grupo de Investigación', icon: 'pi pi-search', routerLink: '/research-groups/group/user-research' }
         ]
       }
     ];

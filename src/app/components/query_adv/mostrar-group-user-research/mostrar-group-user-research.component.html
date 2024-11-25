@@ -1,0 +1,31 @@
+<!-- PrimeNG Card component to display users grouped by research group -->
+<p-card class="w-12 h-full"> <!-- Full-width and full-height styled card container -->
+  
+    <!-- Header Section -->
+    <ng-template pTemplate="header">
+      <h2>Agrupar Estudiantes de una Facultad en Especifico segun Grupo de Investigación</h2> <!-- Card Title -->
+      <p>En este caso usaremos la facultad de Ingenierias</p>
+    </ng-template>
+  
+    <!-- PrimeNG Table for displaying grouped user data -->
+    <p-table [value]="groups"> <!-- Bind the table's data source to the groups array -->
+  
+      <!-- Table Header -->
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Grupo de Investigación</th> <!-- Column for research group name -->
+          <th>Total de Usuarios</th> <!-- Column for total number of users -->
+        </tr>
+      </ng-template>
+  
+      <!-- Table Body -->
+      <ng-template pTemplate="body" let-group> <!-- Iterates over the groups array -->
+        <tr>
+          <td>{{ group.research_group__name }}</td> <!-- Displays the name of the research group -->
+          <td>{{ group.total }}</td> <!-- Displays the total number of users in the group -->
+        </tr>
+      </ng-template>
+  
+    </p-table>
+  </p-card>
+  

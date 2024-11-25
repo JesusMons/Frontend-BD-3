@@ -39,6 +39,11 @@ export class UserService {
   deleteUser(id: number): Observable<UserI> {
     return this.http.delete<UserI>(`${this.base_path}${id}`);
   }
+
+  // Method to get users by program
+  getUsersByProgram(programId: number): Observable<UserI[]> {
+    return this.http.get<UserI[]>(`${this.api_uri_django}/users/user-program/${programId}/`);
+  }
 }
 
 

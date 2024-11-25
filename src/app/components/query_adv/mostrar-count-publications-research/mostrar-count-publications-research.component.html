@@ -1,0 +1,30 @@
+<!-- PrimeNG Card component for displaying publication summaries by research group -->
+<p-card class="w-12 h-full"> <!-- Full-width, full-height styled card container -->
+  
+    <!-- Header section of the card -->
+    <ng-template pTemplate="header">
+      <h2>Agrupar Publicaiones por Grupo de Investigación</h2> <!-- Card title -->
+    </ng-template>
+  
+    <!-- PrimeNG Table component for listing grouped publications -->
+    <p-table [value]="groupedPublications"> <!-- Binds the table's value to the groupedPublications array -->
+      
+      <!-- Table header -->
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Grupo de Investigación</th> <!-- Column for research group names -->
+          <th>Total de Publicaciones</th> <!-- Column for the total number of publications -->
+        </tr>
+      </ng-template>
+  
+      <!-- Table body -->
+      <ng-template pTemplate="body" let-group> <!-- Iterates over the groupedPublications array -->
+        <tr>
+          <td>{{ group.research_group__name }}</td> <!-- Displays the research group's name -->
+          <td>{{ group.total }}</td> <!-- Displays the total number of publications for the group -->
+        </tr>
+      </ng-template>
+      
+    </p-table>
+  </p-card>
+  
