@@ -1,0 +1,59 @@
+<p-card class="w-12 h-full">
+    <ng-template pTemplate="header">
+      <div class="flex justify-content-between flex-wrap">
+        <h3 class="ml-4">User Registry</h3>
+        <div class="mt-2 mr-2">
+          <!--<a 
+            pButton 
+            pRipple
+            label="Create User" 
+            icon="pi pi-user-plus"
+            class="bg-cyan-600"
+            [routerLink]="['/user/nuevo']">
+          </a>-->
+        </div>
+      </div>
+    </ng-template>
+    <p>
+      <p-table [value]="users">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Tipo Usuario</th>
+            <th>Actions</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-users>
+          <tr>
+            <td>{{ users.first_name }}</td>
+            <td>{{ users.last_name }}</td>
+            <td>{{ users.email }}</td>
+            <td>{{ users.user_type }}</td>
+
+            <td>
+              
+              <a 
+                pButton 
+                pRipple
+                icon="pi pi-sync"
+                severity="warning"
+                class="mr-1"
+                [routerLink]="['/user/edit', users.id]">
+              </a>
+              <button 
+                pButton 
+                pRipple
+                severity="danger"
+                icon="pi pi-eraser"
+                class="mr-1"
+                (click)="eliminar(users.id)"
+              ></button>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </p>
+  </p-card>
+  

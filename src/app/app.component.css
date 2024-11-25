@@ -1,0 +1,51 @@
+/* CSS Grid Layout for the main structure of the application, including header, sidebar, main content, and footer */
+main {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "header header header header header"
+        "aside section section section section"
+        "footer footer footer footer footer";
+    row-gap: 0;
+    column-gap: 0;
+    grid-template-rows: 20% 70% 10%;
+    height: 98vh;
+}
+
+/* Styling for the header section */
+header {
+    grid-area: header;
+    border: 1px solid royalblue;
+}
+
+/* Styling for the sidebar section */
+aside {
+    grid-area: aside;
+    border: 1px solid royalblue;
+}
+
+/* Styling for the main content section */
+section {
+    grid-area: section;
+    border: 1px solid royalblue;
+}
+
+/* Flexbox layout for elements within a specific container */
+.recuadros {
+    display: flex;
+    flex-flow: row wrap;
+    row-gap: 20px;
+    margin: 2px 20px 2px 5px;
+}
+
+/* Styling for individual elements within the .recuadros container */
+.elemento {
+    width: 25%;
+}
+
+/* Styling for the footer section */
+footer {
+    grid-area: footer;
+    border: 1px solid royalblue;
+}

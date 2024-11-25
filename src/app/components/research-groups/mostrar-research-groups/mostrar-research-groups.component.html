@@ -1,0 +1,47 @@
+<p-card class="w-12 h-full">
+    <ng-template pTemplate="header">
+      <div class="flex justify-content-between flex-wrap">
+        <h3 class="ml-4">Registro de Grupos de Investigación</h3>
+        <div class="mt-2 mr-2">
+         
+        </div>
+      </div>
+    </ng-template>
+    <p>
+      <p-table [value]="researchGroups">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Acciones</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-researchGroup>
+          <tr>
+            <td>{{ researchGroup.name }}</td>
+            <td>{{ researchGroup.description }}</td>
+            <td>
+              
+              <a 
+                pButton 
+                pRipple
+                icon="pi pi-sync"
+                severity="warning"
+                class="mr-1"
+                [routerLink]="['/research-groups/edit', researchGroup.id]">
+              </a>
+              <button 
+                pButton 
+                pRipple
+                severity="danger"
+                icon="pi pi-eraser"
+                class="mr-1"
+                (click)="eliminar(researchGroup.id)"
+              ></button>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </p>
+  </p-card>
+  
