@@ -62,6 +62,14 @@ export class AsideComponent {
           { label: 'Listar', icon: 'pi pi-list', routerLink: '/research-groups' },
           { label: 'Crear', icon: 'pi pi-plus', routerLink: '/research-groups/nuevo' },
         ]
+      },
+      {
+        label: 'Consultas Avanzadas',
+        icon: 'pi pi-database',
+        items: [
+          { label: 'Listar', icon: 'pi pi-list', routerLink: '' },
+          { label: 'Crear', icon: 'pi pi-plus', routerLink: '' },
+        ]
       }
     ];
   }
