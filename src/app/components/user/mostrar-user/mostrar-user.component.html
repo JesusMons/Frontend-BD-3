@@ -1,59 +1,58 @@
-<p-card class="w-12 h-full">
+<section class="content">
+  <p-card class="w-12 h-full">
+    <!-- Card Header -->
     <ng-template pTemplate="header">
-      <div class="flex justify-content-between flex-wrap">
-        <h3 class="ml-4">User Registry</h3>
-        <div class="mt-2 mr-2">
-          <!--<a 
-            pButton 
-            pRipple
-            label="Create User" 
-            icon="pi pi-user-plus"
-            class="bg-cyan-600"
-            [routerLink]="['/user/nuevo']">
-          </a>-->
+      <div class="flex justify-content-between align-items-center flex-wrap">
+        <!-- Title of the card -->
+        <h3 class="ml-4" style="margin-bottom: 0px; color: #01616c; font-weight: bold;">
+          Usuarios
+        </h3>
+        <div class="mt-2 mr-4">
+          <!-- Create User Button -->
+          <a pButton pRipple label="Crear Usuario" icon="pi pi-user-plus"
+             class="bg-primary text-white font-bold px-3 py-2 border-round" [routerLink]="['/user/nuevo']">
+          </a>
         </div>
       </div>
     </ng-template>
+  
+    <!-- Main Content -->
     <p>
-      <p-table [value]="users">
+      <!-- Table displaying users -->
+      <p-table [value]="users" class="custom-table" scrollable="true" scrollHeight="350px">
+        <!-- Table Header -->
         <ng-template pTemplate="header">
           <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-            <th>Tipo Usuario</th>
-            <th>Actions</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Correo</th>
+            <th>Tipo de Usuario</th>
+            <th>Acciones</th>
           </tr>
         </ng-template>
+      
+        <!-- Table Body -->
         <ng-template pTemplate="body" let-users>
           <tr>
+            <!-- User Data -->
             <td>{{ users.first_name }}</td>
             <td>{{ users.last_name }}</td>
             <td>{{ users.email }}</td>
             <td>{{ users.user_type }}</td>
-
             <td>
-              
-              <a 
-                pButton 
-                pRipple
-                icon="pi pi-sync"
-                severity="warning"
-                class="mr-1"
-                [routerLink]="['/user/edit', users.id]">
+              <!-- Edit Button -->
+              <a pButton pRipple icon="pi pi-sync" class="bg-warning text-white mr-1"
+                 [routerLink]="['/user/edit', users.id]">
               </a>
-              <button 
-                pButton 
-                pRipple
-                severity="danger"
-                icon="pi pi-eraser"
-                class="mr-1"
-                (click)="eliminar(users.id)"
-              ></button>
+              <!-- Delete Button -->
+              <button pButton pRipple icon="pi pi-eraser" class="bg-danger text-white mr-1" 
+                      (click)="eliminar(users.id)">
+              </button>
             </td>
           </tr>
         </ng-template>
-      </p-table>
+      </p-table>    
     </p>
   </p-card>
   
+</section>

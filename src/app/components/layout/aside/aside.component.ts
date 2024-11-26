@@ -13,7 +13,7 @@ import { MenuItem } from 'primeng/api';
   standalone: true, // Indicates that this component can be used without being declared in a NgModule
   imports: [PanelMenuModule], // Import the PanelMenuModule from PrimeNG
   templateUrl: './aside.component.html', // Define the path to the HTML template file
-  styleUrl: './aside.component.css' // Define the path to the CSS file for styling this component
+  styleUrl: './aside.component.css', // Define the path to the CSS file for styling this component
 })
 export class AsideComponent {
   items: MenuItem[] = []; // Define the items property to hold menu items
@@ -32,7 +32,7 @@ export class AsideComponent {
         ]
       },
       {
-        label: 'Faculties',
+        label: 'Facultades',
         icon: 'pi pi-fw pi-briefcase',
         items: [
           { label: 'Listar', icon: 'pi pi-list', routerLink: '/faculties' },

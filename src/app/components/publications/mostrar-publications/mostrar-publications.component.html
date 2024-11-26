@@ -1,43 +1,64 @@
-<p-card class="w-12 h-full">
+<section class="content">
+  <p-card class="w-12 h-full">
+    <!-- Card Header -->
     <ng-template pTemplate="header">
-      <div class="flex justify-content-between flex-wrap">
-        <h3 class="ml-4">Registro de Publicaciones</h3>
-        
+      <div class="flex justify-content-between align-items-center flex-wrap">
+        <!-- Card Title -->
+        <h3 class="ml-4" style="margin-bottom: 0px; color: #01616c; font-weight: bold;">
+          Publicaciones
+        </h3>
+        <div class="mt-2 mr-4">
+          <!-- Create Publication Button -->
+          <a 
+            pButton 
+            pRipple 
+            label="Crear Pulicación" 
+            icon="pi pi-plus-circle" 
+            class="bg-primary text-white font-bold px-3 py-2 border-round"
+            [routerLink]="['/publications/new']">
+          </a>
+        </div>
       </div>
     </ng-template>
+  
+    <!-- Main Content -->
     <p>
-      <p-table [value]="publications">
+      <!-- Table displaying publications -->
+      <p-table [value]="publications" class="custom-table" scrollable="true" scrollHeight="370px">
+        <!-- Table Header -->
         <ng-template pTemplate="header">
           <tr>
-            <th>Título</th>
+            <th>Titulo</th>
             <th>Fecha de Publicación</th>
             <th>Grupo de Investigación</th>
             <th>Acciones</th>
           </tr>
         </ng-template>
+      
+        <!-- Table Body -->
         <ng-template pTemplate="body" let-publication>
           <tr>
+            <!-- Publication Data -->
             <td>{{ publication.title }}</td>
-            <td>{{ publication.publication_date}}</td>
+            <td>{{ publication.publication_date }}</td>
             <td>{{ publication.research_group_name }}</td>
             <td>
-         
+              <!-- Edit Button -->
               <a 
                 pButton 
-                pRipple
+                pRipple 
                 icon="pi pi-sync"
-                severity="warning"
-                class="mr-1"
+                class="bg-warning text-white mr-2"
                 [routerLink]="['/publications/edit', publication.id]">
               </a>
+              <!-- Delete Button -->
               <button 
                 pButton 
-                pRipple
-                severity="danger"
+                pRipple 
                 icon="pi pi-eraser"
-                class="mr-1"
-                (click)="eliminar(publication.id)"
-              ></button>
+                class="bg-danger text-white"
+                (click)="eliminar(publication.id)">
+              </button>
             </td>
           </tr>
         </ng-template>
@@ -45,3 +66,4 @@
     </p>
   </p-card>
   
+</section>

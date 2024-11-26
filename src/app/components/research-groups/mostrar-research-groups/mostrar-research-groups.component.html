@@ -1,14 +1,25 @@
-<p-card class="w-12 h-full">
+<section class="content">
+  <p-card class="w-12 h-full">
+    <!-- Card Header -->
     <ng-template pTemplate="header">
-      <div class="flex justify-content-between flex-wrap">
-        <h3 class="ml-4">Registro de Grupos de Investigación</h3>
-        <div class="mt-2 mr-2">
-         
+      <div class="flex justify-content-between align-items-center flex-wrap">
+        <h3 class="ml-4" style="margin-bottom: 0px; color: #01616c; font-weight: bold;">
+          Grupos de Investigación
+        </h3>
+        <div class="mt-2 mr-4">
+          <!-- Button to create a new research group -->
+          <a pButton pRipple label="Crear Grupo" icon="pi pi-plus-circle" 
+            class="bg-primary text-white font-bold px-3 py-2 border-round" [routerLink]="['/research-groups/new']">
+          </a>
         </div>
       </div>
     </ng-template>
+  
+    <!-- Main content of the card -->
     <p>
-      <p-table [value]="researchGroups">
+      <!-- Table displaying the research groups -->
+      <p-table [value]="researchGroups" class="custom-table" scrollable="true" scrollHeight="370px">
+        <!-- Table Header -->
         <ng-template pTemplate="header">
           <tr>
             <th>Nombre</th>
@@ -16,32 +27,25 @@
             <th>Acciones</th>
           </tr>
         </ng-template>
+      
+        <!-- Table Body -->
         <ng-template pTemplate="body" let-researchGroup>
           <tr>
-            <td>{{ researchGroup.name }}</td>
-            <td>{{ researchGroup.description }}</td>
+            <td>{{ researchGroup.name }}</td> <!-- Displays the research group's name -->
+            <td>{{ researchGroup.description }}</td> <!-- Displays the research group's description -->
             <td>
-              
-              <a 
-                pButton 
-                pRipple
-                icon="pi pi-sync"
-                severity="warning"
-                class="mr-1"
+              <!-- Edit button -->
+              <a pButton pRipple icon="pi pi-sync" class="bg-warning text-white mr-1"
                 [routerLink]="['/research-groups/edit', researchGroup.id]">
               </a>
-              <button 
-                pButton 
-                pRipple
-                severity="danger"
-                icon="pi pi-eraser"
-                class="mr-1"
-                (click)="eliminar(researchGroup.id)"
-              ></button>
+              <!-- Delete button -->
+              <button pButton pRipple icon="pi pi-eraser" class="bg-danger text-white mr-1" 
+                (click)="eliminar(researchGroup.id)">
+              </button>
             </td>
           </tr>
         </ng-template>
       </p-table>
     </p>
   </p-card>
-  
+</section>

@@ -1,46 +1,62 @@
-<p-card class="w-12 h-full">
-  <ng-template pTemplate="header">
-    <div class="flex justify-content-between flex-wrap">
-      <h3 class="ml-4">Registro de Programas</h3>
-      <div class="mt-2 mr-2">
-        
+<section class="content">
+  <p-card class="w-12 h-full">
+    <!-- Card Header -->
+    <ng-template pTemplate="header">
+      <div class="flex justify-content-between align-items-center flex-wrap">
+        <h3 class="ml-4" style="margin-bottom: 0px; color: #01616c; font-weight: bold;">
+          Programas
+        </h3>
+        <div class="mt-2 mr-4">
+          <a 
+            pButton 
+            pRipple 
+            label="Crear Programa" 
+            icon="pi pi-plus-circle" 
+            class="bg-primary text-white font-bold px-3 py-2 border-round"
+            [routerLink]="['/programs/new']">
+          </a>
+        </div>
       </div>
-    </div>
-  </ng-template>
-  <p>
-    <p-table [value]="programs">
-      <ng-template pTemplate="header">
-        <tr>
-          <th>Nombre</th>
-          <th>Facultad</th>
-          <th>Acciones</th>
-        </tr>
-      </ng-template>
-      <ng-template pTemplate="body" let-program>
-        <tr>
-          <td>{{ program.name }}</td>
-          <td>{{ program.faculty_name }}</td>
-          <td>
-           
-            <a 
-              pButton 
-              pRipple
-              icon="pi pi-sync"
-              severity="warning"
-              class="mr-1"
-              [routerLink]="['/programs/edit', program.id]">
-            </a>
-            <button 
-              pButton 
-              pRipple
-              severity="danger"
-              icon="pi pi-eraser"
-              class="mr-1"
-              (click)="eliminar(program.id)"
-            ></button>
-          </td>
-        </tr>
-      </ng-template>
-    </p-table>
-  </p>
-</p-card>
+    </ng-template>
+  
+    <!-- Main Content -->
+    <p>
+      <p-table [value]="programs" class="custom-table" scrollable="true" scrollHeight="370px">
+        <!-- Table Header -->
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Nombre</th>
+            <th>Facultad</th>
+            <th>Acciones</th>
+          </tr>
+        </ng-template>
+      
+        <!-- Table Body -->
+        <ng-template pTemplate="body" let-program>
+          <tr>
+            <td>{{ program.name }}</td>
+            <td>{{ program.faculty_name }}</td>
+            <td>
+              <!-- Edit Button -->
+              <a 
+                pButton 
+                pRipple 
+                icon="pi pi-sync"
+                class="bg-warning text-white mr-2"
+                [routerLink]="['/programs/edit', program.id]">
+              </a>
+              <!-- Delete Button -->
+              <button 
+                pButton 
+                pRipple 
+                icon="pi pi-eraser"
+                class="bg-danger text-white"
+                (click)="eliminar(program.id)">
+              </button>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </p>
+  </p-card>
+</section>

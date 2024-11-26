@@ -1,0 +1,11 @@
+.content {
+    grid-area: section; /* Placement in grid layout */
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+    backdrop-filter: blur(5px); /* Optional: blur for better contrast */
+    border: 1px solid #ddd; /* Subtle border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 20px; /* Internal spacing */
+    height: 100%; /* Occupy full height */
+    display: flex; /* Flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
+}

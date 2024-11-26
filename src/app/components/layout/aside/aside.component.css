@@ -1,12 +1,14 @@
-/* Minimalist card container with scroll */
+/* Minimalist card container with transparency and scroll */
 .card {
-    background-color: #f9f9f9; /* Light background color */
+    background-color: rgba(255, 255, 255, 0.5); /* White with 80% transparency */
+    backdrop-filter: blur(5px); /* Optional: Adds a blur effect for contrast */
     border: 1px solid #ddd; /* Subtle border */
     border-radius: 5px; /* Rounded corners */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow effect */
     padding: 10px; /* Internal padding */
-    height: 100%; /* Use full height of the aside */
+    height: 100%; /* Full height of the aside */
     overflow-y: auto; /* Vertical scroll if needed */
+    z-index: 1; /* Ensure above the background */
 }
 
 /* PanelMenu styling */
@@ -19,7 +21,7 @@ p-panelMenu {
 
 /* Menu header styling */
 p-panelMenu .ui-panelmenu-header {
-    background-color: transparent; /* Transparent background for a minimalist look */
+    background-color: transparent; /* Transparent background for minimalist look */
     color: #01616c; /* Primary text color */
     font-weight: bold; /* Bold text */
     padding: 10px; /* Internal padding */

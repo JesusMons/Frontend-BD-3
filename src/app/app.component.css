@@ -1,5 +1,12 @@
 /* CSS Grid Layout for the main structure of the application, including header, sidebar, main content, and footer */
 main {
+    background-image: url('https://uniguajira.edu.co/wp-content/uploads/2024/04/Uniguajira-reafirma-su-compromiso-con-la-transformacion-social-de-La-Guajira.webp');
+    position: relative;
+    /* Necesario para la capa superpuesta */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
     display: grid;
     gap: 10px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -11,6 +18,19 @@ main {
     column-gap: 0;
     grid-template-rows: 20% 70% 10%;
     height: 98vh;
+}
+
+main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Negro semitransparente */
+    z-index: -1;
+    /* Coloca esta capa detrás del contenido */
 }
 
 /* Styling for the header section */

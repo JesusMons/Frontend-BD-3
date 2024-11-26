@@ -1,13 +1,16 @@
 /* General footer styles */
 footer {
     grid-area: footer; /* Placement within the grid layout */
-    background-color: #014a4f; /* Darker background than the header */
+    background-color: rgba(1, 74, 79, 0.9); /* Darker background with 80% opacity */
+    backdrop-filter: blur(5px); /* Optional: Adds a blur effect for better contrast */
     color: white; /* White text color */
     display: flex; /* Flexbox layout */
     justify-content: space-between; /* Distribute content evenly */
     align-items: center; /* Vertically center content */
     padding: 10px 20px; /* Internal spacing */
-    border-top: 2px solid #01616c; /* Top border to match the header's color */
+    border-top: 2px solid rgba(1, 97, 108, 0.8); /* Top border matching header's theme */
+    position: relative;
+    z-index: 1; /* Ensures footer is above the background */
 }
 
 /* Footer content styling */
