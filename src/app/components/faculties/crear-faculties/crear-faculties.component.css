@@ -1,0 +1,101 @@
+/* General styles for the content section */
+.content {
+    grid-area: section; /* Placement in grid layout */
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+    backdrop-filter: blur(5px); /* Optional: blur effect for contrast */
+    border: 1px solid #ddd; /* Subtle border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 20px; /* Internal spacing */
+    height: 100%; /* Occupy full height */
+    display: flex; /* Flexbox layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: flex-start; /* Align content to the top */
+}
+
+/* Wider card styling */
+.create-faculty-card {
+    width: 100%; /* Full width inside content */
+    max-width: 800px; /* Adjust maximum width */
+    background-color: #ffffff; /* White background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Internal spacing */
+    overflow: hidden; /* Prevent overflow */
+}
+
+/* Input group styling */
+.p-inputgroup {
+    display: flex;
+    align-items: center; /* Center icons and inputs */
+    border-radius: 5px; /* Slightly rounded corners */
+}
+
+.p-inputgroup-addon {
+    background-color: #01616c; /* Primary color for addon background */
+    color: #ffffff; /* White text */
+    border-radius: 5px 0 0 5px; /* Rounded left corners */
+}
+
+/* Input fields */
+.p-inputgroup input {
+    border: 1px solid #ddd; /* Light border */
+    padding: 8px; /* Internal spacing */
+    border-radius: 0 5px 5px 0; /* Rounded right corners */
+    width: 100%; /* Ensure full width inside the group */
+}
+
+/* Button styling */
+.btn-primary {
+    background-color: #01616c !important; /* Primary blue */
+    color: #ffffff !important; /* White text */
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    background-color: #014a4f !important; /* Darker blue on hover */
+}
+
+.btn-warning {
+    background-color: #ffc107 !important; /* Yellow warning */
+    color: #ffffff !important; /* White text */
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800 !important; /* Darker yellow on hover */
+}
+
+/* Input group styling */
+.p-inputgroup {
+    display: flex;
+    align-items: center; /* Center icons and inputs */
+    border-radius: 5px; /* Slightly rounded corners */
+    height: 50px; /* Match height of the icon (adjust as needed) */
+}
+
+/* Addon (Icon) styling */
+.p-inputgroup-addon {
+    background-color: #01616c; /* Primary color for addon background */
+    color: #ffffff; /* White text */
+    border-radius: 5px 0 0 5px; /* Rounded left corners */
+    font-size: 1.2rem; /* Increase icon size */
+    display: flex;
+    align-items: center; /* Center icon vertically */
+    justify-content: center; /* Center icon horizontally */
+    padding: 0 15px; /* Spacing inside the addon */
+    height: 100%; /* Ensure it matches the input group height */
+}
+
+/* Input and select fields */
+.p-inputgroup input,
+.p-inputgroup select {
+    border: 1px solid #ddd; /* Light border */
+    padding: 10px 15px; /* Internal spacing for larger fields */
+    border-radius: 0 5px 5px 0; /* Rounded right corners */
+    width: 100%; /* Full width */
+    font-size: 1rem; /* Slightly larger text */
+    height: 100%; /* Match height of the icon */
+    box-sizing: border-box; /* Include padding and border in the total height */
+}

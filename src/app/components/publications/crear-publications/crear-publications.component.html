@@ -1,68 +1,96 @@
-<p-card header="Crear Publicación" [style]="{ width: '100%' }">
-    <div>
-      <form [formGroup]="form" novalidate (ngSubmit)="onSubmit()" class="p-3 bg-faded">
-        <div class="grid">
-          <div class="col-12 sm:col-6">
-            <div class="p-inputgroup mb-1">
-              <span class="p-inputgroup-addon"><i class="pi pi-book"></i></span>
-              <input class="w-12" type="text" pInputText formControlName="title" placeholder="Título de la Publicación" title="Título Publicación">         
-            </div>
+<section class="content">
+  <p-card header="Crear Publicación" class="create-publication-card">
+    <form [formGroup]="form" novalidate (ngSubmit)="onSubmit()" class="p-3">
+      <!-- Título -->
+      <div class="grid">
+        <div class="col-12 sm:col-6">
+          <div class="p-inputgroup mb-3">
+            <span class="p-inputgroup-addon"><i class="pi pi-book"></i></span>
+            <input 
+              class="w-12" 
+              type="text" 
+              pInputText 
+              formControlName="title" 
+              placeholder="Título de la Publicación" 
+              title="Título Publicación">         
           </div>
         </div>
-        <div class="grid">
-          <div class="col-12">
-            <div class="p-inputgroup mb-1">
-              <span class="p-inputgroup-addon"><i class="pi pi-align-left"></i></span>
-              <textarea class="w-12" rows="4" pInputTextarea formControlName="abstract" placeholder="Resumen de la Publicación" title="Resumen Publicación"></textarea>      
-            </div>
+      </div>
+
+      <!-- Resumen -->
+      <div class="grid">
+        <div class="col-12">
+          <div class="p-inputgroup mb-3">
+            <span class="p-inputgroup-addon"><i class="pi pi-align-left"></i></span>
+            <textarea 
+              class="w-12" 
+              rows="4" 
+              pInputTextarea 
+              formControlName="abstract" 
+              placeholder="Resumen de la Publicación" 
+              title="Resumen Publicación"></textarea>      
           </div>
         </div>
-        <div class="grid">
-          <div class="col-12 sm:col-6">
-            <div class="p-inputgroup mb-1">
-              <span class="p-inputgroup-addon"><i class="pi pi-calendar"></i></span>
-              <input class="w-12" type="date" pInputText formControlName="publication_date" placeholder="Fecha de Publicación" title="Fecha Publicación">          
-            </div>
-          </div>
-          <div class="col-12 sm:col-6">
-            <div class="p-inputgroup mb-1">
-              <span class="p-inputgroup-addon"><i class="pi pi-users"></i></span>
-              <select class="w-12" formControlName="research_group" title="Grupo de Investigación">
-                <option *ngFor="let group of researchGroups" [value]="group.id">{{ group.name }}</option>
-              </select>          
-            </div>
-          </div>
-          <div class="col-12 sm:col-6">
-            <div class="p-inputgroup mb-1">
-              <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-              <select class="w-12" formControlName="user" title="Usuario">
-                <option *ngFor="let user of users" [value]="user.id">{{ user.first_name }} {{ user.last_name }}</option>
-              </select>          
-            </div>
+      </div>
+
+      <!-- Fecha, Grupo de Investigación, Usuario -->
+      <div class="grid">
+        <div class="col-12 sm:col-6">
+          <div class="p-inputgroup mb-3">
+            <span class="p-inputgroup-addon"><i class="pi pi-calendar"></i></span>
+            <input 
+              class="w-12" 
+              type="date" 
+              pInputText 
+              formControlName="publication_date" 
+              placeholder="Fecha de Publicación" 
+              title="Fecha Publicación">          
           </div>
         </div>
-        <div class="flex justify-content-center flex-wrap">
-          <button 
-            pButton 
-            pRipple
-            label="Guardar"
-            icon="pi pi-save"
-            severity="info"
-            class="mr-4"
-            type="submit"
-          ></button>
-          <button 
-            pButton 
-            pRipple
-            label="Cancelar"
-            icon="pi pi-times-circle"
-            severity="warning"
-            class="mr-4"
-            type="button"
-            (click)="cancel()"
-          ></button>
+        <div class="col-12 sm:col-6">
+          <div class="p-inputgroup mb-3">
+            <span class="p-inputgroup-addon"><i class="pi pi-users"></i></span>
+            <select 
+              class="w-12" 
+              formControlName="research_group" 
+              title="Grupo de Investigación">
+              <option *ngFor="let group of researchGroups" [value]="group.id">{{ group.name }}</option>
+            </select>          
+          </div>
         </div>
-      </form> 
-    </div>
+        <div class="col-12 sm:col-6">
+          <div class="p-inputgroup mb-3">
+            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+            <select 
+              class="w-12" 
+              formControlName="user" 
+              title="Usuario">
+              <option *ngFor="let user of users" [value]="user.id">{{ user.first_name }} {{ user.last_name }}</option>
+            </select>          
+          </div>
+        </div>
+      </div>
+
+      <!-- Botones -->
+      <div class="flex justify-content-center flex-wrap mt-4">
+        <button 
+          pButton 
+          pRipple
+          label="Guardar"
+          icon="pi pi-save"
+          class="btn-primary mr-3"
+          type="submit">
+        </button>
+        <button 
+          pButton 
+          pRipple
+          label="Cancelar"
+          icon="pi pi-times-circle"
+          class="btn-warning"
+          type="button"
+          (click)="cancel()">
+        </button>
+      </div>
+    </form> 
   </p-card>
-  
+</section>

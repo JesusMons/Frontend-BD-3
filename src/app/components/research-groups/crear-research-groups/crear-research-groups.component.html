@@ -1,44 +1,58 @@
-<p-card header="Crear Grupo de Investigación" [style]="{ width: '100%' }">
-    <div>
-      <form [formGroup]="form" novalidate (ngSubmit)="onSubmit()" class="p-3 bg-faded">
-        <div class="grid">
-          <div class="col-12 sm:col-6">
-            <div class="p-inputgroup mb-1">
-              <span class="p-inputgroup-addon"><i class="pi pi-users"></i></span>
-              <input class="w-12" type="text" pInputText formControlName="name" placeholder="Nombre del Grupo de Investigación" title="Nombre Grupo de Investigación">         
-            </div>
+<section class="content">
+  <p-card header="Crear Grupo de Investigación" class="create-research-group-card">
+    <form [formGroup]="form" novalidate (ngSubmit)="onSubmit()" class="p-3">
+      <!-- Nombre del Grupo -->
+      <div class="grid">
+        <div class="col-12 sm:col-6">
+          <div class="p-inputgroup mb-3">
+            <span class="p-inputgroup-addon"><i class="pi pi-users"></i></span>
+            <input 
+              class="w-12" 
+              type="text" 
+              pInputText 
+              formControlName="name" 
+              placeholder="Nombre del Grupo de Investigación" 
+              title="Nombre Grupo de Investigación">         
           </div>
         </div>
-        <div class="grid">
-          <div class="col-12">
-            <div class="p-inputgroup mb-1">
-              <span class="p-inputgroup-addon"><i class="pi pi-align-left"></i></span>
-              <textarea class="w-12" rows="4" pInputTextarea formControlName="description" placeholder="Descripción del Grupo de Investigación" title="Descripción Grupo de Investigación"></textarea>      
-            </div>
+      </div>
+
+      <!-- Descripción -->
+      <div class="grid">
+        <div class="col-12">
+          <div class="p-inputgroup mb-3">
+            <span class="p-inputgroup-addon"><i class="pi pi-align-left"></i></span>
+            <textarea 
+              class="w-12" 
+              rows="4" 
+              pInputTextarea 
+              formControlName="description" 
+              placeholder="Descripción del Grupo de Investigación" 
+              title="Descripción Grupo de Investigación"></textarea>      
           </div>
         </div>
-        <div class="flex justify-content-center flex-wrap">
-          <button 
-            pButton 
-            pRipple
-            label="Guardar"
-            icon="pi pi-save"
-            severity="info"
-            class="mr-4"
-            type="submit"
-          ></button>
-          <button 
-            pButton 
-            pRipple
-            label="Cancelar"
-            icon="pi pi-times-circle"
-            severity="warning"
-            class="mr-4"
-            type="button"
-            (click)="cancel()"
-          ></button>
-        </div>
-      </form> 
-    </div>
+      </div>
+
+      <!-- Botones -->
+      <div class="flex justify-content-center flex-wrap mt-4">
+        <button 
+          pButton 
+          pRipple
+          label="Guardar"
+          icon="pi pi-save"
+          class="btn-primary mr-3"
+          type="submit">
+        </button>
+        <button 
+          pButton 
+          pRipple
+          label="Cancelar"
+          icon="pi pi-times-circle"
+          class="btn-warning"
+          type="button"
+          (click)="cancel()">
+        </button>
+      </div>
+    </form> 
   </p-card>
-  
+</section>
